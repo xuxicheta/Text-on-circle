@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #first, #second, #fifth {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      margin: auto;
+    }
+    #third, #fours {
+      position: relative;
+      height: 150px;
+      width: 150px;
+      margin: auto;
+    }
+
+    .cont {
+      position: relative;
+      display: inline-block;
+      height: 200px;
+      width: 200px;
+    }
+    .big-cont {
+      height: 300px;
+      width: 300px;
+    }
+    .inner-circle {
+      position: absolute;
+      border-radius: 100px;
+      border: 1px solid grey;
+      width: 200px;
+      height: 200px;
+      left: 0;
+      top: 0;
+    }
+    .big-inner-circle {
+      border-radius: 150px;
+      height: 300px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <div id="first">Text on circle</div>
+    <div class="inner-circle"></div>
+  </div>
+  <div class="cont">
+      <div id="second">Text on circle longer then yout mother</div>
+      <div class="inner-circle"></div>
+  </div>
+
+  <div class="cont big-cont">
+      <div id="third">Текст на кружке большой пребольшой</div>
+      <div class="inner-circle big-inner-circle"></div>
+  </div>
+  <div class="cont big-cont">
+    <div id="fours">Разряженный</div>
+    <div class="inner-circle big-inner-circle"></div>
+  </div>
+  <div class="cont">
+      <div id="fifth">Сконцентрированный</div>
+      <div class="inner-circle"></div>
+    </div>
+  <script src="index.js" ></script>
+  <script>
+    textOnCircle(document.getElementById('first'));
+    textOnCircle(document.getElementById('second'));
+    textOnCircle(document.getElementById('third'));
+    textOnCircle(document.getElementById('fours'), 0.8);
+    textOnCircle(document.getElementById('fifth'), 3.0);
+  </script>
+</body>
+</html>

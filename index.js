@@ -8,21 +8,21 @@
  */
 function textOnCircle(elem, letterSpacing = 2.5) {
   const style = {
-  	'position': 'absolute',
+    'position': 'absolute',
     'left': '50%',
-  	'top': '0',
-  	'height': `${elem.clientHeight}px`,
-  	'transform-origin': 'bottom',
+    'top': '0',
+    'height': `${elem.clientHeight}px`,
+    'transform-origin': 'bottom',
   };
 
-	const letters = elem.innerHTML.trim().split('');
+  const letters = elem.innerHTML.trim().split('');
   elem.innerHTML = '';
 
   const tStep = parseInt(getComputedStyle(elem)['font-size'], 10) / letterSpacing;
   const tStart = (1 - letters.length) * tStep / 2;
 
   letters.forEach((u, i) => {
-  	const span = document.createElement('span');
+    const span = document.createElement('span');
     Object.assign(span.style, style);
     span.style.transform = `rotate(${tStart + (tStep * i)}deg)`;
     span.innerHTML = u;
